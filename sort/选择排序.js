@@ -16,6 +16,21 @@ const sort = (arr) => {
     }
 }
 
-sort(arr)
+
+
+
+const sort1 = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+        const minIndex = i;
+        for (let j = i; j < arr.length; j++) {
+            if (arr[minIndex] > arr[j]) {
+                const temp = arr[minIndex];
+                arr[minIndex] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+}
+sort1(arr)
 
 console.log(arr)
