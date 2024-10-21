@@ -23,11 +23,13 @@ const shellSort1 = (arr) => {
     for (let gap = Math.floor(arr.length / 2); gap > 0; gap = Math.floor(gap / 2)) {
         for (let i = gap; i < arr.length; i++) {
             const temp = arr[i]
-            let j;
-            for (j = i; j > 0 && arr[j - 1] > temp; j--) {
-                arr[j] = arr[j - 1]
+            let j = i - gap;
+            while (j >= 0 && arr[j] > temp) {
+
+                arr[j + gap] = arr[j]
+                j -= gap
             }
-            arr[j] = temp
+            arr[j + gap] = temp
         }
     }
 }

@@ -1,5 +1,5 @@
 genRandomArr = () => {
-    const arr = new Array(100).fill(0).map(() => Math.floor(Math.random() * 100))
+    const arr = [...new Set(new Array(100).fill(0).map(() => Math.floor(Math.random() * 100)))]
     return arr
 }
 
