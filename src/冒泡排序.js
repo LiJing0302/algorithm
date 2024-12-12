@@ -43,4 +43,17 @@ const sort2 = (arr) => {
   return arr;
 };
 
-console.log(sort2(arr));
+const sort3 = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 1; j < arr.length - i; j++) {
+      if (arr[j] < arr[j - 1]) {
+        const temp = arr[j];
+        arr[j] = arr[j - 1];
+        arr[j - 1] = temp;
+      }
+    }
+  }
+  return arr;
+};
+
+console.log(sort3(arr));
